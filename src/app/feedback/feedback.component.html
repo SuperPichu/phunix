@@ -1,6 +1,6 @@
 <mat-toolbar>Accuracy</mat-toolbar>
-<p>You have answered a total of {{feedback.completed}} question(s), of which {{feedback.correct}} were correct.</p>
-<p>Your accuracy is {{feedback.correct/feedback.completed | percent}} percent.</p>
+<p>You have answered a total of {{feedback["completed"]}} question(s), of which {{feedback["correct"]}} were correct.</p>
+<p>Your accuracy is {{feedback["correct"]/feedback["completed"] | percent}} percent.</p>
 
 <mat-toolbar>Time Spent</mat-toolbar>
-<p>You have spent {{feedback.time % 60}} minutes practicing!</p>
+<p>You have spent {{feedback["time"] % 60}} minutes practicing!</p>
