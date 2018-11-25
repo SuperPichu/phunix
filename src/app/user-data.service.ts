@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserDataService {
 
   constructor() { }
-  getFeedback() {
+  public getFeedback() {
     // In the future this won't be hard-coded.
     return {
       'completed': 23,

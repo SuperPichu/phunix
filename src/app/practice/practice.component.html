@@ -1,3 +1,17 @@
-<p>
-  practice works!
-</p>
+<div class="maxwidth-container">
+<mat-card>
+<div class="align-center">
+  <audio src={{transcriptions[current].recording}} controls></audio>
+</div>
+<mat-form-field class="as-block">
+  <input [(ngModel)]="answer" type="text" matInput placeholder="Transcription"/>
+</mat-form-field>
+<div class="container">
+  <button mat-raised-button (click)="checkAnswer()" color="primary" class="align-right">Check</button>
+</div>
+</mat-card>
+<div class="next-prev">
+  <button mat-raised-button (click)="prev()">Prev</button>
+  <button mat-raised-button color="primary" class="align-right" (click)="next()">Next</button>
+</div>
+</div>

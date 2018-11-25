@@ -4,16 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-import { MatSidenavModule, MatToolbarModule, MatListModule, MatButtonModule, MatIconModule, MatInputModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule, MatListModule, MatButtonModule,
+  MatIconModule, MatInputModule, MatCheckboxModule, MatCardModule, MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PracticeSettingsComponent } from './practice-settings/practice-settings.component';
 import { PracticeComponent } from './practice/practice.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { TranscriptionProviderService } from './transcription-provider.service';
+import { UserDataService } from './user-data.service';
+import { FormsModule } from '@angular/forms';
+import { DialogComponent } from './dialog/dialog.component';
 
 const appRoutes = [
   { path: 'home', component: HomeComponent },
   { path: 'practice_settings', component: PracticeSettingsComponent },
-  { path: 'practice/:id', component: PracticeComponent },
+  { path: 'practice', component: PracticeComponent },
   { path: 'feedback', component: FeedbackComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
@@ -24,7 +29,8 @@ const appRoutes = [
     HomeComponent,
     PracticeSettingsComponent,
     PracticeComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,11 @@ const appRoutes = [
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    BrowserAnimationsModule
+    MatCheckboxModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatDialogModule,
+    FormsModule
   ],
   exports: [
     MatSidenavModule,
@@ -46,10 +56,15 @@ const appRoutes = [
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    MatCheckboxModule,
     RouterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatDialogModule,
+    FormsModule
   ],
-  providers: [],
+  entryComponents: [DialogComponent],
+  providers: [TranscriptionProviderService, UserDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

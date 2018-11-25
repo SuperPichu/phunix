@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserDataService} from '../user-data.service';
 
 @Component({
   selector: 'app-feedback',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor() { }
+  feedback: object;
+
+  constructor(private data: UserDataService) {
+    this.feedback = data.getFeedback();
+  }
 
   ngOnInit() {
   }

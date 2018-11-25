@@ -7,7 +7,7 @@ export class TranscriptionProviderService {
 
   constructor() { }
 
-  getRecordings() {
+  public getRecordings() {
     // In the future this won't be hard-coded.
     return [
       {'id': 1, 'text': 'tropospheres', 'ipa': 'tɹˈɒpəsfˌiəz', 'recording': 'assets/recordings/1.mp3'},

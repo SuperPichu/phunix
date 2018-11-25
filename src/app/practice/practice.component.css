@@ -1,0 +1,24 @@
+.align-right {
+  float: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.as-block {
+  display: block;
+}
+
+.container {
+  overflow: auto;
+}
+
+.maxwidth-container {
+  max-width: 500px;
+  margin:0 auto;
+}
+
+.next-prev {
+  padding-top: 8px;
+}
