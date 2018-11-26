@@ -14,6 +14,8 @@ import { TranscriptionProviderService } from './transcription-provider.service';
 import { UserDataService } from './user-data.service';
 import { FormsModule } from '@angular/forms';
 import { DialogComponent } from './dialog/dialog.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes = [
   { path: 'home', component: HomeComponent },
@@ -47,7 +49,8 @@ const appRoutes = [
     BrowserAnimationsModule,
     MatCardModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   exports: [
     MatSidenavModule,
